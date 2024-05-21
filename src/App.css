@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .nav-link {
+    @apply relative font-semibold text-white cursor-pointer text-[15px] w-fit md:block;
+  }
+
+  .nav-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #f021b2;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.font-custom {
+  font-family: "Clicker Script", cursive;
+  font-size: 50px;
+  font-weight: 700;
+}
